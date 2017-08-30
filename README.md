@@ -7,21 +7,30 @@ well put it on github, in case someone else, against all odds, likes it. :-)
 
 ## Usage
 
-In your Window Manager of choice, bind a hotkey (myself I use Left-Windows
-  + Left-Ctrl) to launch plilauncher.sh (not .py) when pressed. That script
+In your Window Manager of choice, bind a hotkey (myself I use Left-Windows + Left-Ctrl) to launch plilauncher.sh (not .py) when pressed. That script
 will then check if the Plilauncher window is already open - if it is, it
 will be closed, and if not, it will open. When you click on a program to
-launch, the window will close.
+launch, the window will close. The menu will pop up where the mouse cursor
+is located. 
 
 ## Installation
 
-Just but the two files plilauncher.py and plilauncher.sh somewhere in your
+Just copy the two files plilauncher.py and plilauncher.sh somewhere in your
 $PATH, for example /usr/local/bin
+
+## External dependencies
+
+* PyGTK 
+* xdotool
+There are Ubuntu/Debian packages for these so it's easy to install.
 
 ## Configuration
 
 Edit plilauncher.py and modify the array at the beginning of the file, it's
 self explanatory.
+
+Since it uses PyGTK (GTK) the menu follows your current GNOME/GTK theme
+configuration.
 
 ## License
 

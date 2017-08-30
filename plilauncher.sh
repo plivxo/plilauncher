@@ -13,8 +13,8 @@
 
 WINDOWEXISTS=false
 # Use regexp since xdotool interprets this as a regexp pattern, so make
-# sure we don't match any other window containing "PliLauncher" in the name:
-if xdotool search --name 'PliLauncher$'
+# sure we don't match any other window containing "PliLauncherWindow" in the name:
+if xdotool search --name 'PliLauncherWindow$'
 then
 	WINDOWEXISTS=true
 fi
@@ -23,7 +23,7 @@ if [ $WINDOWEXISTS = true ]
 then
 	# Make sure that if you pressed your hotkey to display the window, another
 	# press of that key hides the menu:
-	xdotool search --name 'PliLauncher$' windowkill
+	xdotool search --name 'PliLauncherWindow$' windowkill
 else
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 	$DIR/plilauncher.py &

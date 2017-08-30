@@ -12,7 +12,7 @@ import subprocess
 commands = []
 # Configure your menu options here.
 commands.append(["Start XTerm", "xterm"])
-commands.append(["Start XCalc", "xcalc -title hej"])
+commands.append(["Start XCalc", "xcalc -title hello"])
 
 class PliLauncher:
 
@@ -29,17 +29,17 @@ class PliLauncher:
     def __init__(self):
 		
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.window.set_title("PliLauncher")
+        self.window.set_title("PliLauncherWindow")
         self.window.connect("delete_event", self.delete_event)
         self.window.set_border_width(10)
         self.box1 = gtk.VBox(False, 0)
         self.window.add(self.box1)
         
         for cmd in commands:
-			self.button = gtk.Button(cmd[0])
-			self.button.connect("clicked", self.callback, cmd[1])
-			self.box1.pack_start(self.button, True, True)
-			self.button.show()
+        	self.button = gtk.Button(cmd[0])
+		self.button.connect("clicked", self.callback, cmd[1])
+		self.box1.pack_start(self.button, True, True)
+		self.button.show()
 
         self.box1.show()
         
