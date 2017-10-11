@@ -11,9 +11,18 @@
 # Requirements:
 # External command "xdotool"
 
-WINDOWEXISTS=false
+# Make sure 'xdotool' is installed, otherwise display a warning:
+XDOTOOLEXISTS=false
+which xdotool && XDOTOOLEXISTS=true
+if [ $XDOTOOLEXISTS = false ]
+then
+	xmessage "You need to install xdotool"
+	exit 1
+fi
+
 # Use regexp since xdotool interprets this as a regexp pattern, so make
 # sure we don't match any other window containing "PliLauncherWindow" in the name:
+WINDOWEXISTS=false
 if xdotool search --name 'PliLauncherWindow$'
 then
 	WINDOWEXISTS=true
